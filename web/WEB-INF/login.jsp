@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -13,5 +14,8 @@
             password: <input type="password" name="password"><br>
             <input type="submit" value="Sign in">
         </form>
+            <a href="<c:url value="/reset">
+                       <c:param name="action" value="reset" />
+                   </c:url>">Reset Password</a>
     </body>
 </html>

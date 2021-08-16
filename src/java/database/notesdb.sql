@@ -14,6 +14,7 @@ CREATE TABLE IF NOT EXISTS `notesdb`.`user` (
   `last_name` VARCHAR(20) NOT NULL,
   `password` VARCHAR(20) NOT NULL,
   `role` INT(11) NOT NULL,
+ `ResetPasswordUUID` VARCHAR(50) NULL,
   PRIMARY KEY (`email`),
   CONSTRAINT `fk_user_role`
     FOREIGN KEY (`role`)
@@ -34,16 +35,16 @@ CREATE TABLE `note` (
 INSERT INTO `role` VALUES (1, 'system admin');
 INSERT INTO `role` VALUES (2, 'regular user');
 
-INSERT INTO `user` (`email`,`active`,`first_name`,`last_name`,`password`,`role`)
-	VALUES ('sait.cprg.352+admin@gmail.com', true, 'Admin','Admin', 'password', 1);
-INSERT INTO `user` (`email`,`active`,`first_name`,`last_name`,`password`,`role`)
-	VALUES ('sait.cprg.352+anne@gmail.com', true, 'Anne','Annerson', 'password', 2);
-INSERT INTO `user` (`email`,`active`,`first_name`,`last_name`,`password`,`role`)
-	VALUES ('sait.cprg.352+barb@gmail.com', true, 'Barb','Barber', 'password', 2);
+INSERT INTO `user` (`email`,`active`,`first_name`,`last_name`,`password`,`role`, `ResetPasswordUUID`)
+	VALUES ('jordantejada.school+admin@gmail.com', true, 'Admin','Admin', 'password', 1, null);
+INSERT INTO `user` (`email`,`active`,`first_name`,`last_name`,`password`,`role`, `ResetPasswordUUID`)
+	VALUES ('jordantejada.school+anne@gmail.com', true, 'Anne','Annerson', 'password', 2, null);
+INSERT INTO `user` (`email`,`active`,`first_name`,`last_name`,`password`,`role`, `ResetPasswordUUID`)
+	VALUES ('jordantejada.school+barb@gmail.com', true, 'Barb','Barber', 'password', 2, null);
 
 INSERT INTO `note` (`Title`, `Contents`, `Owner`)
-    VALUES ('Quote #1', 'Writing is nature''s way of letting you know how sloppy your thinking is.', 'sait.cprg.352+anne@gmail.com');
+    VALUES ('Quote #1', 'Writing is nature''s way of letting you know how sloppy your thinking is.', 'jordantejada.school+anne@gmail.com');
 INSERT INTO `note` (`Title`, `Contents`, `Owner`)
-    VALUES ('Another quote', '"Java is to JavaScript as ham is to hamster." -  Jeremy Keith', 'sait.cprg.352+anne@gmail.com');
+    VALUES ('Another quote', '"Java is to JavaScript as ham is to hamster." -  Jeremy Keith', 'jordantejada.school+anne@gmail.com');
 INSERT INTO `note` (`Title`, `Contents`, `Owner`)
-    VALUES ('Barb''s Note', 'Anne should not see this note.', 'sait.cprg.352+barb@gmail.com');
+    VALUES ('Barb''s Note', 'Anne should not see this note.', 'jordantejada.school+barb@gmail.com');
